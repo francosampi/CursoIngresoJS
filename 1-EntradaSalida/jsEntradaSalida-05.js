@@ -7,6 +7,5 @@ function mostrar()
 
 	let edad = document.getElementById("txtIdEdad").value;
 
-	alert(`Su nombre es ${nombre} y tiene ${edad} años`)
+	alert(`Su nombre es ${nombre} y tiene ${edad} años`);
 }
-

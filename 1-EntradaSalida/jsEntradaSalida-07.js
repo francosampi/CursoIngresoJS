@@ -1,4 +1,6 @@
 /*
+Sampietro, Franco
+
 Debemos lograr tomar Los numeros por ID ,
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resulto por medio de "ALERT"
@@ -6,40 +8,64 @@ ej.: "la Resta es 750"*/
 
 function sumar()
 {	
-	let num1, num2;
+	let numeroUno;
+	let numeroDos;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroUno").value);
-	num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroUno = parseInt(numeroUno);
 
-	alert("La suma es "+parseInt(num1+num2));
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	numeroDos = parseInt(numeroDos);
+
+	let resultado = numeroUno + numeroDos;
+
+	alert("La suma es "+resultado);
 }
 
 function restar()
 {
-	let num1, num2;
+	let numeroUno;
+	let numeroDos;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroUno").value);
-	num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroUno = parseInt(numeroUno);
 
-	alert("La resta es "+parseInt(num1-num2));
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	numeroDos = parseInt(numeroDos);
+
+	let resultado = numeroUno - numeroDos;
+
+	alert("La resta es "+resultado);
 }
 
 function multiplicar()
 { 
-	let num1, num2;
+	let numeroUno;
+	let numeroDos;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroUno").value);
-	num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroUno = parseInt(numeroUno);
+
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	numeroDos = parseInt(numeroDos);
    
-	alert("El producto es "+parseInt(num1*num2));
+	let resultado = numeroUno * numeroDos;
+
+	alert("El producto es "+resultado);
 }
 
 function dividir()
 {
-	let num1, num2;
+	let numeroUno;
+	let numeroDos;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroUno").value);
-	num2 = parseInt(document.getElementById("txtIdNumeroDos").value);
+	numeroUno = document.getElementById("txtIdNumeroUno").value;
+	numeroUno = parseInt(numeroUno);
 
-	alert("El cociente es "+parseInt(num1/num2));
+	numeroDos = document.getElementById("txtIdNumeroDos").value;
+	numeroDos = parseInt(numeroDos);
+
+	let resultado = numeroUno / numeroDos;
+
+	alert("El cociente es "+resultado);
 }

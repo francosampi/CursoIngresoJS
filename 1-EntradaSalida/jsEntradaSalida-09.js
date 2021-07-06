@@ -5,7 +5,14 @@ mostrar el importe con un aumento del 10 %
 en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
-	let num = parseInt(document.getElementById("txtIdSueldo").value);
+	let importeSueldo;
+	let resultado;
 
-	document.getElementById("txtIdResultado").value = parseFloat(num*1.1)
+	importeSueldo = document.getElementById("txtIdSueldo").value;
+	importeSueldo = parseFloat(importeSueldo);
+
+	resultado = importeSueldo*1.1;
+	resultado = resultado.toFixed(2);
+
+	document.getElementById("txtIdResultado").value = resultado;
 }

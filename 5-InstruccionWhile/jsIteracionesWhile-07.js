@@ -6,13 +6,25 @@ function mostrar()
 {
 	var contador;
 	var acumulador;
-	var respuesta;
+	var numeroIngresado;
+	var cantidadEntradas;
+
 	contador=0;
 	acumulador=0;
-	respuesta='si';
+	numeroIngresado=0;
 
+	cantidadEntradas = prompt("¿Cuántos numeros desea ingresar?");
+	
+	while(numeroIngresado<cantidadEntradas){
+		numeroIngresado=prompt("Ingresar un número");
+		numeroIngresado=parseInt(numeroIngresado);
+		
+		acumulador+=numeroIngresado;
 
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/contador;
+		txtIdSuma.value=acumulador;
+		txtIdPromedio.value=acumulador/5;
+
+		contador++;
+	}
 
 }//FIN DE LA FUNCIÓN

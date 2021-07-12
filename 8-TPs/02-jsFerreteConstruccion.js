@@ -8,8 +8,9 @@ function Rectangulo ()
 {
     let largo;
     let ancho;
+    let perimetroRectangulo;
 
-    let rectangulo;
+    let cantidadAlambre;
 
     largo = document.getElementById("txtIdLargo").value;
     largo = parseInt(largo);
@@ -17,23 +18,28 @@ function Rectangulo ()
     ancho = document.getElementById("txtIdAncho").value;
     ancho = parseInt(ancho);
 
-    rectangulo = (largo*ancho)/3;
+    perimetroRectangulo = (2*largo + 2*ancho);
+    cantidadAlambre = perimetroRectangulo*3;
 
-    alert(rectangulo);
+    alert("Cantidad de alambre necesario: "+cantidadAlambre);
 
 }
 function Circulo () 
 {
 	let radio;
+    let perimetroCirculo;
 
-    let circulo;
+    let cantidadAlambre;
 
     radio = document.getElementById("txtIdRadio").value;
     radio = parseInt(radio);
 
-    circulo = (Math.pow(radio*3.14, 2))/3;
+    perimetroCirculo = radio*3.14*2;
 
-    alert(circulo);
+    cantidadAlambre = perimetroCirculo*3;
+    cantidadAlambre = cantidadAlambre.toFixed(2);
+
+    alert("Cantidad de alambre necesario: "+cantidadAlambre);
 }
 function Materiales ()
 {

@@ -1,3 +1,10 @@
+/*
+P19-3
+
+Sampietro, Franco
+DIV. D
+*/
+
 function mostrar()
 {
     let precio;
@@ -9,9 +16,8 @@ function mostrar()
 
     porcentajeDescuento = prompt("Ingrese porcentaje de descuento");
     porcentajeDescuento = parseInt(porcentajeDescuento);
-    porcentajeDescuento = porcentajeDescuento/100;
 
-    precioFinal = precio-(precio*porcentajeDescuento);
+    precioFinal = precio-(precio*(porcentajeDescuento/100));
 
     document.getElementById("elPrecioFinal").value = precioFinal;
 }

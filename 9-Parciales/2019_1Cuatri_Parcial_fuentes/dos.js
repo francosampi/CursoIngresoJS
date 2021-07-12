@@ -1,3 +1,10 @@
+/*
+Parcial 2019 (Ejercicio 2)
+
+Sampietro, Franco
+DIV. D
+*/
+
 function mostrar()
 {
   let nombreUno;
@@ -7,6 +14,8 @@ function mostrar()
   let pesoDos;
   let sumaPeso;
   let promedioPeso;
+
+  let mensaje;
 
   nombreUno = prompt("Ingrese su nombre (1)");
   nombreDos = prompt("Ingrese su nombre (2)");
@@ -18,10 +27,11 @@ function mostrar()
   pesoDos = parseInt(pesoDos);
 
   sumaPeso = pesoUno+pesoDos;
-  promedioPeso = pesoUno+pesoDos/2;
+  promedioPeso = (pesoUno+pesoDos)/2;
 
-  alert("Ustedes se llaman "+nombreUno+" y "+nombreDos+
-  ", pesan "+pesoUno+" y "+pesoDos+", que sumados son "+sumaPeso+
-  " y el promedio es "+promedioPeso);
+  mensaje = "Ustedes se llaman "+nombreUno+" y "+nombreDos;
+  mensaje += ", pesan "+pesoUno+" y "+pesoDos+", que sumados son "+sumaPeso;
+  mensaje += " y el promedio es "+promedioPeso;
 
+  alert(mensaje);
 }

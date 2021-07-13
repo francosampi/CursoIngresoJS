@@ -1,11 +1,15 @@
 function mostrar()
 {
-	if (document.getElementById("txtIdEdad").value>=18)
+	let edad;
+	
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
+
+	if (edad>=18)
 		alert("Es mayor de edad");
-	else if (document.getElementById("txtIdEdad").value>=13 &&
-	document.getElementById("txtIdEdad").value<=17)
+	else if (edad>=13 && edad<=17)
 		alert("Es adolescente");
-	else if (document.getElementById("txtIdEdad").value<13)
+	else
 		alert("Es un niño");
 
 }//FIN DE LA FUNCIÓN

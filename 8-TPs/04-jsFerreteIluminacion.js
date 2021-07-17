@@ -5,31 +5,134 @@ B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuent
 C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
- ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
+”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
+*/
 
- */
 function CalcularPrecio () 
 {
     let precioLampara;
  	let cantidadLamparas;
     let marcaLampara;
     let precioConDescuento;
-
-    let impuestoIIBBPorcentaje=0.1;
+    let descuentoLampara;
+    let impuestoIIBBPorcentaje;
     let impuestoIIBB;
 
-    let descuentoLampara;
-
     precioLampara = 35;
-
+    impuestoIIBBPorcentaje = 0.1;
+    descuentoLampara = 0;
     cantidadLamparas = document.getElementById("txtIdCantidad").value;
     cantidadLamparas = parseInt(cantidadLamparas);
-
     marcaLampara = document.getElementById("Marca").value;
 
-    impuestoIngresosBrutos = 0.1;
+    
+    if (cantidadLamparas>5)
+    {
+        descuentoLampara = 0.5;
+    }
+    else
+    {
+        switch(cantidadLamparas)
+        {
+            case 5:
+                switch(marcaLampara)
+                {
+                    case "ArgentinaLuz":
+                        descuentoLampara = 0.25;
+                    break;
+                    default:
+                        descuentoLampara = 0.3;
+                }
+            break;
+    
+            case 4:
+                switch(marcaLampara)
+                {
+                    case "ArgentinaLuz":
+                        descuentoLampara = 0.25;
+                    break;
+                    case "FelipeLamparas":
+                        descuentoLampara = 0.25;
+                    break;
+                    default:
+                        descuentoLampara = 0.2;
+                }
+            break;
+    
+            case 3:
+                switch(marcaLampara)
+                {
+                    case "ArgentinaLuz":
+                        descuentoLampara = 0.15;
+                    break;
+                    case "FelipeLamparas":
+                        descuentoLampara = 0.1;
+                    break;
+                    default:
+                        descuentoLampara = 0.05;
+                }
+            break;
+        }
+    }
 
-    if (cantidadLamparas>=6)
+    /*
+    --SWITCH E IF--
+
+    if (cantidadLamparas>5)
+    {
+        descuentoLampara = 0.5;
+    }
+    else
+    {
+        switch(cantidadLamparas)
+        {
+            case 5:
+                if (marcaLampara=="ArgentinaLuz")
+                {
+                    descuentoLampara = 0.4;
+                }
+                else
+                {
+                    descuentoLampara = 0.3;
+                }
+            break;
+    
+            case 4:
+                if (marcaLampara=="ArgentinaLuz" || marcaLampara=="FelipeLamparas")
+                {
+                    descuentoLampara = 0.25;
+                }
+                else
+                {
+                    descuentoLampara = 0.2;
+                }
+            break;
+    
+            case 3:
+                if (marcaLampara=="ArgentinaLuz")
+                {
+                    descuentoLampara = 0.15;
+                }
+                else
+                {
+                    if (marcaLampara=="FelipeLamparas")
+                    {
+                        descuentoLampara = 0.1;
+                    }
+                    else
+                    {
+                        descuentoLampara = 0.05;
+                    }
+                }
+            break;
+        }
+    }
+    */
+
+    /*
+    --SOLO CON IF--
+
+    if (cantidadLamparas>5)
     {
         descuentoLampara = 0.5;
     }
@@ -43,50 +146,53 @@ function CalcularPrecio ()
             }
             else
             {
-                descuentoLampara = 0.4;
-            }
-        }
-        if (cantidadLamparas==4)
-        {
-            if (marcaLampara=="ArgentinaLuz" || marcaLampara=="FelipeLamparas")
-            {
-                descuentoLampara = 0.25;
-            }
-            else
-            {
-                descuentoLampara = 0.2;
+                descuentoLampara = 0.3;
             }
         }
         else
         {
-            if (marcaLampara=="ArgentinaLuz")
+            if (cantidadLamparas==4)
             {
-                descuentoLampara = 0.15;
-            }
-            else
-            {
-                if (marcaLampara=="FelipeLamparas")
+                if (marcaLampara=="ArgentinaLuz" || marcaLampara=="FelipeLamparas")
                 {
-                    descuentoLampara = 0.1;
+                    descuentoLampara = 0.25;
                 }
                 else
                 {
-                    descuentoLampara = 0.05;
+                    descuentoLampara = 0.2;
+                }
+            }
+            else
+            {
+                if (cantidadLamparas==3)
+                {
+                    if (marcaLampara=="ArgentinaLuz")
+                    {
+                        descuentoLampara = 0.15;
+                    }
+                    else
+                    {
+                        if (marcaLampara=="FelipeLamparas")
+                        {
+                            descuentoLampara = 0.1;
+                        }
+                        else
+                        {
+                            descuentoLampara = 0.05;
+                        }
+                    }
                 }
             }
         }
-    }
-    precioConDescuento=(cantidadLamparas*precioLampara);
-    precioConDescuento=precioConDescuento*descuentoLampara;
+    }*/
+
+    precioConDescuento = (cantidadLamparas*precioLampara)*(1-descuentoLampara);
 
     if (precioConDescuento>120)
     {
-        impuestoIIBB=precioConDescuento*impuestoIIBBPorcentaje;
-
-        precioConDescuento=precioConDescuento+impuestoIIBB;
-
-        alert("IIBB Usted pagó "+impuestoIIBB);
+        impuestoIIBB = precioConDescuento*impuestoIIBBPorcentaje;
+        alert("IIBB Usted pagó "+impuestoIIBB.toFixed(2)+"$");
+        precioConDescuento = precioConDescuento+impuestoIIBB;
     }
-
-    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento.toFixed(2)+"$";
 }

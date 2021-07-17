@@ -1,8 +1,10 @@
 function mostrar()
 {
-	switch(document.getElementById("txtIdMes").value){
-		case "Enero":
-		case "Febrero":
+	let mes;
+
+	mes = document.getElementById("txtIdMes").value;
+
+	switch(mes){
 		case "Marzo":
 		case "Abril":
 		case "Junio":
@@ -12,11 +14,7 @@ function mostrar()
 		case "Agosto":
 			alert("Abrigate que hace frío");
 		break;
-		case "Septiembre":
-		case "Octubre":
-		case "Noviembre":
-		case "Diciembre":
+		default:
 			alert("Ya pasamos el frío, ahora calor!!!");
-		break;
 	}
 }//FIN DE LA FUNCIÓN

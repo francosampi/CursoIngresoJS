@@ -10,10 +10,35 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
 function ComenzarIngreso () 
 {
  	//definicion de variables
- 	var edadIngresada;
- 	var sexoIngresado;
- 	var estadoCivilIngresado;
+ 	let edadIngresada;
+ 	let sexoIngresado;
+ 	let estadoCivilIngresado;
+	let sueldoIngresado;
+	let legajoIngresado;
+	let nacionalidadIngresada;
 
+	while(
+		(edadIngresada<18 || edadIngresada>90) ||
+		(sexoIngresado!="F" && sexoIngresado!="M") ||
+		(estadoCivilIngresado<1 || estadoCivilIngresado>4) ||
+		(sueldoIngresado<8000) ||
+		((legajoIngresado.length>4) || isNaN(legajoIngresado)) ||
+		(nacionalidadIngresada!="A"&& nacionalidadIngresada!="E" && nacionalidadIngresada!="N")
+		){
+			edadIngresada=prompt("Ingrese su edad (entre 18 y 90)");
+			edadIngresada=parseInt(edadIngresada);
+			sexoIngresado=prompt("Ingrese su sexo (F/M)");
+			estadoCivilIngresado=prompt("Ingrese su estado civil: 1-Soltero/a 2-Casado/a 3-Divorciado/a 4-Viudo/a");
+			sueldoIngresado=prompt("Ingrese su sueldo (no menor a 8000)");
+			sueldoIngresado=parseInt(sueldoIngresado);
+			legajoIngresado=prompt("Ingrese legajo");
+			nacionalidadIngresada=prompt("Ingrese nacionalidad (A/E/N)");
+	}
 
-
+	txtIdEdad.value = edadIngresada;
+	txtIdSexo.value = sexoIngresado;
+	txtIdEstadoCivil.value = estadoCivilIngresado;
+	txtIdSueldo.value = sueldoIngresado;
+	txtIdLegajo.value = legajoIngresado;
+	txtIdNacionalidad.value = nacionalidadIngresada;
 }

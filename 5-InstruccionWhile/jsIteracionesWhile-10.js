@@ -12,18 +12,68 @@ hasta que el usuario quiera, mostrar:
 9-Diferencia entre positivos y negativos, (positvos-negativos). */
 function mostrar()
 {
-	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+	let numeroIngresado;
+	let sumaPositivos;
+	let sumaNegativos;
+	let cantidadPositivos;
+	let cantidadNegativos;
+	let cantidadCeros;
+	let cantidadPares;
+	let promedioPositivos;
+	let promedioNegativos;
+	let diferenciaPositivosNegativos;
 
-	respuesta="si";
+	seguir=true;
 
-	while(respuesta=="si")
+	sumaPositivos=0;
+	sumaNegativos=0;
+	cantidadPositivos=0;
+	cantidadNegativos=0;
+	cantidadCeros=0;
+	cantidadPares=0;
+	promedioPositivos=0;
+	promedioNegativos=0;
+	diferenciaPositivosNegativos=0;
+
+	while(seguir)
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		numeroIngresado=prompt("Ingrese un numero");
+		numeroIngresado=parseInt(numeroIngresado);
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+		if (numeroIngresado>0){
+			sumaPositivos+=numeroIngresado;
+			cantidadPositivos++;
+		}
+		else
+		{
+			if (numeroIngresado<0){
+				sumaNegativos+=numeroIngresado;
+				cantidadNegativos++;
+			}
+			else
+			{
+				if (numeroIngresado==0){
+					cantidadCeros++;
+				}
+			}
+		}
+		if (numeroIngresado%2==0){
+			cantidadPares++;
+		}
+		seguir=confirm("Desea continuar?");
+	}
+	promedioPositivos = sumaPositivos/cantidadPositivos;
+	promedioNegativos = sumaNegativos/cantidadNegativos;
+	diferenciaPositivosNegativos = sumaPositivos - sumaNegativos;
+
+	document.write("Suma de positivos:"+sumaPositivos+"<br>");
+	document.write("Suma de negativos:"+sumaNegativos+"<br>");
+	document.write("Cantidad de positivos:"+cantidadPositivos+"<br>");
+	document.write("Cantidad de negativos:"+cantidadNegativos+"<br>");
+	document.write("Cantidad de ceros:"+cantidadCeros+"<br>");
+	document.write("Cantidad de pares:"+cantidadPares+"<br>");
+	document.write("Promedio de positivos:"+promedioPositivos+"<br>");
+	document.write("Promedio de negativos:"+promedioNegativos+"<br>");
+	document.write("Diferencia de positivos y negativos:"+diferenciaPositivosNegativos+"<br>");
+
 }//FIN DE LA FUNCIÓN

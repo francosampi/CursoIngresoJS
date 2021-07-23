@@ -17,6 +17,17 @@ function mostrar()
 		numeroIngresado=prompt("Ingrese un numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
+		if (flagPrimero || numeroIngresado>maximo)
+		{
+			maximo = numeroIngresado;
+		}
+		if (numeroIngresado<minimo || flagPrimero)
+		{
+			minimo = numeroIngresado;
+			flagPrimero=false;
+		}
+
+		/*
 		if (flagPrimero){
 			maximo=numeroIngresado;
 			minimo=numeroIngresado;
@@ -34,6 +45,8 @@ function mostrar()
 				}
 			}
 		}
+		*/
+		
 		seguir=confirm("Desea continuar?");
 	}
 	txtIdMaximo.value=maximo;

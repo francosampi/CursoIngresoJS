@@ -26,26 +26,6 @@ function mostrar()
 			minimo = numeroIngresado;
 			flagPrimero=false;
 		}
-
-		/*
-		if (flagPrimero){
-			maximo=numeroIngresado;
-			minimo=numeroIngresado;
-			flagPrimero=false;
-		}
-		else
-		{
-			if(numeroIngresado>maximo){
-				maximo = numeroIngresado;
-			}
-			else
-			{
-				if (numeroIngresado<minimo){
-					minimo = numeroIngresado;
-				}
-			}
-		}
-		*/
 		
 		seguir=confirm("Desea continuar?");
 	}

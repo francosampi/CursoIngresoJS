@@ -43,13 +43,29 @@ function mostrar()
 	{
 		numeroIngresado=prompt("Ingrese un numero: ");
 		numeroIngresado=parseInt(numeroIngresado);
+		
+		if (flagPrimero)
+		{
+			maximoIngresados = numeroIngresado;
+			
+			if (numeroIngresado>0)
+			{
+				minimoPositivos = numeroIngresado;
+			}
+			flagPrimero=false;
+		}
+
+		if (numeroIngresado>maximoIngresados)
+		{
+			maximoIngresados = numeroIngresado;
+		}
 
 		if (numeroIngresado>0)
 		{
 			sumaPositivos+=numeroIngresado;
 			cantidadPositivos++;
 
-			if (!flagPrimero && numeroIngresado<minimoPositivos)
+			if (numeroIngresado<minimoPositivos)
 			{
 				minimoPositivos = numeroIngresado;
 			}
@@ -71,24 +87,6 @@ function mostrar()
 			cantidadPares++;
 		}
 		
-		if (flagPrimero)
-		{
-			maximoIngresados = numeroIngresado;
-			
-			if (numeroIngresado>0)
-			{
-				minimoPositivos = numeroIngresado;
-			}
-
-			flagPrimero=false;
-		}
-		else
-		{
-			if (numeroIngresado>maximoIngresados)
-			{
-				maximoIngresados = numeroIngresado;
-			}
-		}
 		seguir=confirm("Desea continuar?");
 	}
 	diferenciaPositivosNegativos = sumaPositivos - sumaNegativos;

@@ -14,7 +14,8 @@ function ComenzarIngreso ()
  	
 }
 
-function NumerosPares(){
+function NumerosPares()
+{
     let numeroIngresado = document.getElementById("txtIdNumero").value;
     let numeroIngresadoMensaje;
     let contador;
@@ -22,12 +23,6 @@ function NumerosPares(){
     numeroIngresado = parseInt(numeroIngresado);
     numeroIngresadoMensaje = numeroIngresado;
     contador=0;
-
-    /*while(isNaN(numeroIngresado) || numeroIngresado<0)
-    {
-        alert("Error, el dato ingresado no es un numero positivo");
-        document.getElementById("txtIdNumero").value = "";
-    }*/
 
     if (numeroIngresado%2==1)
     {
@@ -47,7 +42,8 @@ function NumerosPares(){
     alert("Existen "+contador+" numeros pares del "+numeroIngresadoMensaje+" al 0.");
 }
 
-function NumerosImpares(){
+function NumerosImpares()
+{
     let numeroIngresado = document.getElementById("txtIdNumero").value;
     let numeroIngresadoMensaje;
     let contador;
@@ -74,7 +70,8 @@ function NumerosImpares(){
     alert("Existen "+contador+" numeros impares del "+numeroIngresadoMensaje+" al 0.");
 }
 
-function NumerosDivisibles(){
+function NumerosDivisibles()
+{
     let numeroIngresado = document.getElementById("txtIdNumero").value;
     let contadorHastaCien;
     let contadorDivisibles;
@@ -83,14 +80,78 @@ function NumerosDivisibles(){
     contadorHastaCien = 1;
     contadorDivisibles = 0;
 
-    if (contadorHastaCien<100)
+    while(contadorHastaCien<100)
     {
-        if (numeroIngresado%contadorHastaCien==0)
+        if (contadorHastaCien%numeroIngresado==0)
         {
             contadorDivisibles++;
         }
         contadorHastaCien++;
     }
 
-    alert("Existen "+contadorDivisibles+" numeros divisibles por "+numeroIngresadoMensaje+" del 1 al 100.");
+    alert("Existen "+contadorDivisibles+" numeros divisibles por "+numeroIngresado+" del 1 al 100.");
+}
+
+function VerificarPrimo()
+{
+    let numeroIngresado = document.getElementById("txtIdNumero").value;
+    let contador;
+    let esPrimo;
+    
+    numeroIngresado = parseInt(numeroIngresado);
+    contador = numeroIngresado-1;
+    esPrimo = true;
+
+    while(contador>1)
+    {
+        if (numeroIngresado%contador==0)
+        {
+            esPrimo = false;
+        }
+        contador--;
+    }
+
+    if (esPrimo)
+    {
+        alert(numeroIngresado+" es un número primo.");
+    }
+    else
+    {
+        alert(numeroIngresado+" no es un número primo.");
+    }
+}
+
+function NumerosPrimos()
+{
+    let numeroIngresado = document.getElementById("txtIdNumero").value;
+    let contadorHastaCero;
+    let contadorHastaCeroInterno;
+    let contadorVerificarPrimo;
+    let contadorPrimos;
+
+    numeroIngresado = parseInt(numeroIngresado);
+    contadorHastaCero = numeroIngresado;
+    contadorVerificarPrimo = true;
+    contadorPrimos = 0;
+
+    while(contadorHastaCero>0)
+    {
+        contadorVerificarPrimo = true;
+        contadorHastaCeroInterno = contadorHastaCero-1;
+
+        while(contadorHastaCeroInterno>1)
+        {
+            if (contadorHastaCero%contadorHastaCeroInterno==0)
+            {
+                contadorVerificarPrimo = false;
+            }
+            contadorHastaCeroInterno--;
+        }
+        if (contadorVerificarPrimo)
+        {
+            contadorPrimos++;
+        }
+        contadorHastaCero--;
+    }
+    alert("Existen "+contadorPrimos+" número(s) primo(s) a partir del número "+numeroIngresado+" hasta el 0.");
 }

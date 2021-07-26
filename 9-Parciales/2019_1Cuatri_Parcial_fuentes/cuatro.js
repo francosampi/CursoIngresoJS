@@ -11,12 +11,20 @@ function mostrar()
     numeroDos = parseInt(numeroDos);
 
     if(numeroUno==numeroDos)
+    {
         alert(numeroUno+""+numeroDos);
-    else if(numeroUno>numeroDos){
-        resultado = numeroUno-numeroDos;
+    }
+    else
+    {
+        if(numeroUno>numeroDos)
+        {
+            resultado = numeroUno-numeroDos;
+        }
+    }
         
-        if (resultado>10)
-            alert("La resta da "+resultado+" y superó el 10");
+    if (resultado>10)
+    {
+        alert("La resta da "+resultado+" y superó el 10");
     }
     else
         resultado = numeroUno+numeroDos;

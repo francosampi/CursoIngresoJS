@@ -63,7 +63,7 @@ function mostrar()
 				if (sexo=="m")
 				{
 					cantidadHombresSolterosEdad++;
-					hombresSolterosEdad+=edad;
+					hombresSolterosEdad += edad;
 					hombresSolterosYViudos++;
 				}
 			break;

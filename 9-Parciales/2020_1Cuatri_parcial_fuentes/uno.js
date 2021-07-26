@@ -17,6 +17,7 @@ function mostrar()
 	let cantidadUnidadesBarbijo;
 	let cantidadUnidadesJabon;
 	let cantidadUnidadesAlcohol;
+	//PRECIO POR COMPRA?
 
 	productoTipo = "";
 	productoPrecio = 0;
